@@ -147,7 +147,7 @@ module.exports = (env = {}) => {
           collapseWhitespace: true,
           minifyCSS: true,
           minifyJS: true,
-          removeEmptyElements: true,
+          removeEmptyElements: false,
           cache: false
         } : false
       }),
