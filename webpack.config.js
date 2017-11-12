@@ -79,6 +79,24 @@ module.exports = (env = {}) => {
           use: [ {
             loader: 'url-loader'
           }]
+        },
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: {
+            loader: "url-loader?limit=10000",
+            options: {
+              outputPath: 'css/'
+            }
+          }
+        },
+        {
+          test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'css/'
+            }
+          }
         }
       ]
     },

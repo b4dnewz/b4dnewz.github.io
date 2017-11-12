@@ -1,6 +1,8 @@
 $textColor: #d6d6d6;
 $strongTextColor: #ffe082;
 $bgColor: #161618;
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
 
 body,
 html {
@@ -17,14 +19,52 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .page-title {
     font-size: 42px;
+
     strong {
       color: $strongTextColor;
       cursor: pointer;
       transition: all 250ms linear;
+
       &:hover {
         color: darken($strongTextColor, 10%);
+      }
+    }
+  }
+
+  .page-subtitle {
+    text-align: center;
+
+    span {
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .links {
+    text-align: center;
+    font-size: 18px;
+    color: silver;
+
+    a:hover {
+      color: white;
+    }
+
+    .links-group {
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 5px;
       }
     }
   }
@@ -58,7 +98,6 @@ html {
     text-shadow: -1px 0 #e64a19;
   }
 }
-
 @keyframes glitch-anim-1 {
   $steps: 10;
   @for $i from 0 through $steps {
@@ -67,7 +106,6 @@ html {
     }
   }
 }
-
 @keyframes glitch-anim-2 {
   $steps: 10;
   @for $i from 0 through $steps {
@@ -76,7 +114,6 @@ html {
     }
   }
 }
-
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (max-width : 732px) {
   .wrapper {
